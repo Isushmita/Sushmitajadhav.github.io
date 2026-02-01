@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Sushmita Jadhav</title>
-  <meta name="description" content="Personal website of Your Name" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sushmita R. Jadhav | Data Analyst</title>
+  <meta name="description" content="Sushmita R. Jadhav — Data Analyst & Business Analyst. SQL, Python, Tableau, BI, analytics engineering, and executive dashboards." />
 
   <style>
     :root{
@@ -14,133 +13,464 @@
       --text:#e7eefc;
       --muted:#9bb0d1;
       --border:rgba(231,238,252,.12);
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
       --accent:#7aa2ff;
+      --accent2:#56d2ff;
     }
-
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: var(--bg);
-      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 800px at 12% 10%, rgba(122,162,255,.18), transparent 60%),
+        radial-gradient(900px 700px at 88% 18%, rgba(86,210,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
       line-height:1.6;
     }
-
-    a{color:var(--accent); text-decoration:none}
+    a{color:inherit; text-decoration:none}
     a:hover{text-decoration:underline}
+    .container{max-width:980px; margin:0 auto; padding:28px 18px 70px}
 
-    .container{
-      max-width:900px;
-      margin:0 auto;
-      padding:48px 20px;
+    /* topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(10,14,22,.62);
+      border-bottom:1px solid var(--border);
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 14px 18px;
     }
+    .brand{font-weight:900; letter-spacing:.2px}
+    .nav{display:flex; gap:14px; align-items:center}
+    .nav a{color:var(--muted)}
+    .nav a:hover{color:var(--text)}
 
-    header{
-      margin-bottom:48px;
+    /* hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      padding: 28px 0 8px;
     }
-
-    h1{
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      margin:0 0 8px;
-    }
-
-    h2{
-      margin:0 0 12px;
-      font-size:1.4rem;
-    }
-
-    p{margin:0 0 14px}
-    .muted{color:var(--muted)}
-
     .card{
       border:1px solid var(--border);
-      background: var(--card);
-      border-radius:18px;
-      padding:24px;
-      margin-bottom:32px;
+      background: rgba(255,255,255,.02);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
     }
-
-    .buttons{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:18px;
-    }
-
-    .btn{
-      padding:10px 14px;
-      border-radius:12px;
+    h1{margin:0 0 10px; font-size: clamp(2.2rem, 4vw, 3.0rem); line-height:1.15}
+    .subtitle{margin:0 0 14px; color:var(--muted)}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
       border:1px solid var(--border);
-      color:var(--text);
-      background:transparent;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 10px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:inline-block;
     }
 
-    .btn.primary{
-      background: linear-gradient(135deg, #7aa2ff, #5f7cff);
-      color:#0b0f17;
-      border:none;
+    .btnrow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
       font-weight:600;
     }
+    .btn:hover{transform: translateY(-1px); text-decoration:none}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(86,210,255,.70));
+      color:#08101a;
+    }
+    .link{
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .mini{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(255,255,255,.02);
+    }
+    .label{margin:0; font-weight:900}
+    .muted{color:var(--muted)}
+    .mini p{margin:6px 0 0}
+
+    /* sections */
+    .section{padding: 28px 0 0}
+    .section-head h2{margin:0 0 6px}
+    .section-head p{margin:0 0 14px; color:var(--muted)}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px}
+    .chip{
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding: 7px 10px;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: .92rem;
+      white-space:nowrap;
+    }
+
+    /* highlight metrics */
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .metric{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(255,255,255,.02);
+    }
+    .metric .big{font-size:1.25rem; font-weight:950; margin:0}
+    .metric .small{margin:4px 0 0; color:var(--muted); font-size:.95rem}
+
+    /* timeline */
+    .timeline{display:grid; gap:12px}
+    .role{
+      border:1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      background: rgba(255,255,255,.02);
+    }
+    .rolehead{
+      display:flex; justify-content:space-between; gap:12px;
+      flex-wrap:wrap;
+      margin-bottom: 8px;
+    }
+    .rolehead .title{font-weight:950}
+    .rolehead .when{color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{color:var(--muted); margin:6px 0}
+
+    /* photo placeholders */
+    .scroll-gallery{
+      max-height: 440px;
+      overflow-y: auto;
+      display: grid;
+      gap: 12px;
+      padding-right: 6px;
+      scroll-behavior: smooth;
+    }
+    .ph{
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      border:1px dashed rgba(231,238,252,.22);
+      background: rgba(255,255,255,.02);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px;
+      text-align:center;
+      color: var(--muted);
+    }
+    .scroll-gallery::-webkit-scrollbar{width:8px}
+    .scroll-gallery::-webkit-scrollbar-thumb{background: rgba(122,162,255,.35); border-radius:999px}
+    .scroll-gallery{scrollbar-width: thin; scrollbar-color: rgba(122,162,255,.45) transparent}
 
     footer{
-      margin-top:48px;
-      padding-top:24px;
+      margin-top: 34px;
+      padding-top: 18px;
       border-top:1px solid var(--border);
       color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
       font-size:.95rem;
+    }
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .metrics{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .metrics{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <header class="topbar">
+    <a class="brand" href="#top">SJ</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">Bio</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#photos">Photos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- HEADER / INTRO -->
-    <header>
-      <h1>Your Name</h1>
-      <p class="muted">
-        Your role · Your focus area · Open to opportunities
-      </p>
-    </header>
+  <main id="top" class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <div class="kicker"><span class="dot"></span> Data Analyst / Business Analyst • Los Angeles</div>
+        <h1>Sushmita R. Jadhav</h1>
+        <p class="subtitle">
+          I turn messy, multi-source data into dashboards leaders actually use — with pipelines that are reliable, validated,
+          and fast enough to keep up with real decisions.
+        </p>
+
+        <p class="muted" style="margin:0">
+          5+ years across analytics, BI, and analytics engineering — SQL, Python, Tableau/Power BI, ETL, data modeling, and cloud tooling.
+        </p>
+
+        <div class="metrics">
+          <div class="metric">
+            <p class="big">+30%</p>
+            <p class="small">planning accuracy uplift</p>
+          </div>
+          <div class="metric">
+            <p class="big">−40%</p>
+            <p class="small">reporting cycle time</p>
+          </div>
+          <div class="metric">
+            <p class="big">$107K</p>
+            <p class="small">revenue leakage corrected</p>
+          </div>
+          <div class="metric">
+            <p class="big">&gt;98%</p>
+            <p class="small">reporting accuracy checks</p>
+          </div>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/isushmitaa/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="mini">
+          <p class="label">Now</p>
+          <p class="muted">Business Analyst @ ATMA Health ARX (May 2025 – Present)</p>
+        </div>
+        <div class="mini" style="margin-top:10px">
+          <p class="label">What I’m great at</p>
+          <p class="muted">
+            KPI design • forecasting & variance analysis • executive dashboards • data QA • ETL + modeling
+          </p>
+        </div>
+        <div class="mini" style="margin-top:10px">
+          <p class="label">Signature style</p>
+          <p class="muted">
+            “No black boxes.” I document assumptions, validate data, and ship dashboards that tell the truth — clearly.
+          </p>
+        </div>
+      </aside>
+    </section>
 
     <!-- BIO -->
-    <section class="card">
-      <h2>Bio</h2>
-      <p>
-        I’m a <strong>your role</strong> with interests in
-        <strong>your main focus areas</strong>.
-        I enjoy building things that are clean, useful, and thoughtfully designed.
-      </p>
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>Bio</h2>
+        <p>
+          I’m a data analyst who loves the “last mile”: turning analysis into decisions. I build end-to-end pipelines, design
+          BI experiences, and obsess over data quality so leaders can move fast without guessing.
+        </p>
+      </div>
 
-      <p class="muted">
-        Currently focused on learning, building, and growing professionally.
-      </p>
-
-      <div class="buttons">
-        <a class="btn primary" href="resume.pdf" target="_blank">Resume</a>
-        <a class="btn" href="https://github.com/your-username" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/your-handle/" target="_blank">LinkedIn</a>
+      <div class="card">
+        <p style="margin-top:0">
+          Recently, my work has focused on forecasting and financial/operational reporting — building source-to-report checks,
+          improving planning accuracy, and reducing the time it takes to get answers. When something looks “off,” I chase it
+          down to the source and fix it for good.
+        </p>
+        <p class="muted" style="margin-bottom:0">
+          Based in Los Angeles • Open to data/BI/analytics roles
+        </p>
       </div>
     </section>
 
-    <!-- PLACEHOLDER: PROFESSIONAL -->
-    <section class="card">
-      <h2>Professional</h2>
-      <p class="muted">
-        This section will showcase professional photos, projects, and highlights.
-      </p>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p class="muted">A practical stack for analytics, BI, and analytics engineering.</p>
+      </div>
+
+      <div class="card">
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">ETL Pipelines</span>
+          <span class="chip">Data Modeling</span>
+          <span class="chip">Data Quality & Validation</span>
+          <span class="chip">Forecasting</span>
+          <span class="chip">KPI Design</span>
+          <span class="chip">Dimensional Modeling</span>
+          <span class="chip">NoSQL</span>
+          <span class="chip">Databricks</span>
+          <span class="chip">AWS Solutions</span>
+          <span class="chip">Excel (Advanced)</span>
+        </div>
+      </div>
     </section>
 
-    <!-- PLACEHOLDER: LIFESTYLE -->
-    <section class="card">
-      <h2>Lifestyle & Hobbies</h2>
-      <p class="muted">
-        This section will show my interests and activities outside of work.
-      </p>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p class="muted">Impact-first highlights (metrics, reliability, and decision support).</p>
+      </div>
+
+      <div class="timeline">
+        <div class="role">
+          <div class="rolehead">
+            <div class="title">ATMA Health ARX — Business Analyst</div>
+            <div class="when">May 2025 – Present</div>
+          </div>
+          <ul>
+            <li>Diagnosed workflow bottlenecks across financial/operational reporting; rebuilt data workflows end-to-end.</li>
+            <li>Implemented data testing + reconciliation checks, improving source-to-report consistency to &gt;98%.</li>
+            <li>Built forecast vs. actual models (regression + seasonality) to enable early deviation detection (~30% planning accuracy).</li>
+            <li>Identified and corrected ~$107K quarterly revenue leakage, driving ~57% profitability improvement.</li>
+            <li>Reduced reporting cycle time by ~40% by removing manual handoffs and strengthening the pipeline layer.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="rolehead">
+            <div class="title">CSU Northridge — Institutional Research (Data Analyst)</div>
+            <div class="when">Nov 2024 – Jan 2025</div>
+          </div>
+          <ul>
+            <li>Analyzed 78K+ survey records across 10+ cycles and integrated academic records using SQL + Python.</li>
+            <li>Built/maintained survey analytics pipelines and dashboards supporting institutional reporting.</li>
+            <li>Standardized and automated workflows (incl. NoSQL modeling standards), reducing manual effort by 70% and setup time by ~80%.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="rolehead">
+            <div class="title">CSU Northridge — Data Research Analyst</div>
+            <div class="when">May 2024 – Nov 2024</div>
+          </div>
+          <ul>
+            <li>Partnered across 254 academic programs to define outcomes and support structured planning.</li>
+            <li>Managed high-volume assessment datasets for audit readiness; delivered reporting for program evaluation and anomaly detection.</li>
+            <li>Supported 13 academic program reviews focused on institutional effectiveness and compliance.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="rolehead">
+            <div class="title">Amiseq India Pvt. Ltd. — Business Analyst</div>
+            <div class="when">Aug 2019 – Sep 2023</div>
+          </div>
+          <ul>
+            <li>Built recurring dashboards and reports for sales/trade analysis and management reviews.</li>
+            <li>Developed customer segmentation insights contributing to ~20% increase in qualified leads.</li>
+            <li>Partnered cross-functionally on projects supporting deals valued at ~$770K; trained 5–10 teammates on analytics workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION + CERTS -->
+    <section class="section" id="education">
+      <div class="section-head">
+        <h2>Education & Certifications</h2>
+        <p class="muted">Formal training + continuous learning.</p>
+      </div>
+
+      <div class="card">
+        <p style="margin-top:0"><strong>M.S. Engineering Management (Data Analytics)</strong> — California State University, Northridge (CSUN) | Dec 2025</p>
+        <p><strong>MBA (Finance)</strong> — Savitribai Phule Pune University, India</p>
+        <p style="margin-bottom:0"><strong>B.E.</strong> — Savitribai Phule Pune University, India</p>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:16px 0" />
+
+        <p style="margin:0"><strong>Certifications</strong></p>
+        <p class="muted" style="margin:8px 0 0">
+          Data Analytics, BI and Generative AI (Google) • Visualizing Data with Python (University of Michigan) •
+          Statistics (Stanford) • Python (Kaggle) • Data Analytics and Science (Technogeeks, India)
+        </p>
+      </div>
+    </section>
+
+    <!-- PHOTOS (placeholders now; swap to your scroll images later) -->
+    <section id="photos" class="section">
+      <div class="section-head">
+        <h2>Photos</h2>
+        <p class="muted">We’ll add your scrollable professional + lifestyle galleries here next.</p>
+      </div>
+
+      <div class="card" style="margin-bottom:12px">
+        <h3 style="margin:0 0 10px">Professional</h3>
+        <div class="scroll-gallery">
+          <div class="ph">
+            Add images later: create <strong>/assets/pro/</strong> and drop your 15+ photos.<br/>
+            Then we’ll swap these placeholders to <code>&lt;img src="assets/pro/01.jpg"&gt;</code>.
+          </div>
+          <div class="ph">Placeholder</div>
+          <div class="ph">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px">Lifestyle & Hobbies</h3>
+        <div class="scroll-gallery">
+          <div class="ph">
+            Add images later: create <strong>/assets/life/</strong> and drop your 15+ photos.
+          </div>
+          <div class="ph">Placeholder</div>
+          <div class="ph">Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (email only) -->
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="muted">Email is the best way to reach me.</p>
+      </div>
+
+      <div class="card">
+        <p style="margin:0">
+          Email: <a class="link" href="mailto:Sushmitajadhav9348@gmail.com">Sushmitajadhav9348@gmail.com</a>
+        </p>
+
+        <div class="btnrow" style="margin-top:14px">
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/isushmitaa/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+
+        <p class="muted" style="margin:12px 0 0">
+          (I don’t list my phone number here—email is preferred.)
+        </p>
+      </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Your Name
+      <span>© <span id="year"></span> Sushmita R. Jadhav</span>
+      <span class="muted">Built on GitHub Pages</span>
     </footer>
   </main>
 
