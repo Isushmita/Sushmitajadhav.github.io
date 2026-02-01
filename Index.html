@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Your Name</title>
+  <meta name="description" content="Personal website of Your Name" />
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#101827;
+      --text:#e7eefc;
+      --muted:#9bb0d1;
+      --border:rgba(231,238,252,.12);
+      --accent:#7aa2ff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:48px 20px;
+    }
+
+    header{
+      margin-bottom:48px;
+    }
+
+    h1{
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin:0 0 8px;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size:1.4rem;
+    }
+
+    p{margin:0 0 14px}
+    .muted{color:var(--muted)}
+
+    .card{
+      border:1px solid var(--border);
+      background: var(--card);
+      border-radius:18px;
+      padding:24px;
+      margin-bottom:32px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      color:var(--text);
+      background:transparent;
+    }
+
+    .btn.primary{
+      background: linear-gradient(135deg, #7aa2ff, #5f7cff);
+      color:#0b0f17;
+      border:none;
+      font-weight:600;
+    }
+
+    footer{
+      margin-top:48px;
+      padding-top:24px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- HEADER / INTRO -->
+    <header>
+      <h1>Your Name</h1>
+      <p class="muted">
+        Your role · Your focus area · Open to opportunities
+      </p>
+    </header>
+
+    <!-- BIO -->
+    <section class="card">
+      <h2>Bio</h2>
+      <p>
+        I’m a <strong>your role</strong> with interests in
+        <strong>your main focus areas</strong>.
+        I enjoy building things that are clean, useful, and thoughtfully designed.
+      </p>
+
+      <p class="muted">
+        Currently focused on learning, building, and growing professionally.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="resume.pdf" target="_blank">Resume</a>
+        <a class="btn" href="https://github.com/your-username" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-handle/" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER: PROFESSIONAL -->
+    <section class="card">
+      <h2>Professional</h2>
+      <p class="muted">
+        This section will showcase professional photos, projects, and highlights.
+      </p>
+    </section>
+
+    <!-- PLACEHOLDER: LIFESTYLE -->
+    <section class="card">
+      <h2>Lifestyle & Hobbies</h2>
+      <p class="muted">
+        This section will show my interests and activities outside of work.
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Your Name
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
